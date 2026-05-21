@@ -1,0 +1,6 @@
+{
+  "name": "Finca Terra",
+  "description": "Premium apiculture, ecotourism, and conscious bioclimatic boutique lodging in the heart of the forest.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
