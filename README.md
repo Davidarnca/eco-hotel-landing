@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🌿 Finca - Ecoturismo y Apicultura Premium
 
-# Run and deploy your AI Studio app
+Un prototipo de landing page de alta fidelidad desarrollado para el ecosistema de **Ecoturismo**. Este proyecto web presenta un modelo de negocio enfocado en bio-hotel, apicultura de conservación, experiencias de senderismo y venta de productos orgánicos. 
 
-This contains everything you need to run your app locally.
+El diseño se centra en una experiencia de usuario (UX) inmersiva, utilizando un enfoque minimalista y orgánico que transmite la esencia de las montañas colombianas.
 
-View your app in AI Studio: https://ai.studio/apps/354eef78-4dbb-4fe2-a513-d51c924c6872
+## 🚀 Tecnologías y Arquitectura
 
-## Run Locally
+Este proyecto fue estructurado bajo un enfoque moderno de desarrollo, priorizando la modularidad y el rendimiento:
 
-**Prerequisites:**  Node.js
+* **Core:** React 18 + TypeScript
+* **Build Tool:** Vite (Optimización y empaquetado ultra rápido)
+* **Estilos:** Tailwind CSS (Diseño utilitario y responsive)
+* **Animaciones:** Framer Motion (Transiciones fluidas y dinámicas)
+* **Iconografía:** Lucide React
+* **Arquitectura:** Componentes modulares y gestión de estado mediante Context API.
 
+   👨‍💻 Autor
+Hugo Alexander Ardila Gordillo
+Web Developer & Backend developer
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Desarrollador web (Ingeniería de Sistemas - Universidad San José) con enfoque en creación de interfaces de usuario, metodologías ágiles y flujos de trabajo modernos.
+
+Prototipo diseñado y desarrollado en 2026.
