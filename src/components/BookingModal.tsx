@@ -36,7 +36,7 @@ export const BookingModal: React.FC = () => {
 
   const basePrice = isRoom ? (targetItem as any).basePrice : (targetItem as any).price;
   const capacityMax = isRoom ? (targetItem as any).capacity : (targetItem as any).capacityMax;
-  const targetName = targetItem.name || (targetItem as any).title;
+  const targetName = isRoom ? (targetItem as any).name : (targetItem as any).title;
 
   const totalPrice = isRoom 
     ? basePrice 
@@ -177,8 +177,7 @@ export const BookingModal: React.FC = () => {
                       type="email"
                       className="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-xs sm:text-sm text-primary/60 cursor-not-allowed"
                       value={userEmail}
-                    />
-                    <span className="text-[9px] text-on-surface-variant/50 uppercase tracking-widest mt-1 block">Credenciales sincronizadas en Stitch</span>
+                    />                    
                   </div>
 
                   {/* Grid Date & Guests count */}

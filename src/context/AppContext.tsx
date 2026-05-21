@@ -137,7 +137,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const newBooking: Booking = {
       ...bookingData,
       id: `booking-${Date.now()}`,
-      userId: 'user-02', // Simulated auth user ID
+      userId: 'user-02', 
       status: 'pendiente', // standard initial status
       createdAt: new Date().toISOString()
     };

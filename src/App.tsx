@@ -1,9 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { AppProvider } from './context/AppContext';
+import { AppProvider} from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { HoneySection } from './components/HoneySection';
@@ -13,7 +8,7 @@ import { BeekeepingTelemetry } from './components/BeekeepingTelemetry';
 import { BentoGallery } from './components/BentoGallery';
 import { Footer } from './components/Footer';
 
-// Interactive Simulated Database Overlays & Drawers
+// Modales y Drawers Globales
 import { ProductQuickView } from './components/ProductQuickView';
 import { BookingModal } from './components/BookingModal';
 import { CartDrawer } from './components/CartDrawer';
@@ -23,7 +18,6 @@ export default function App() {
   return (
     <AppProvider>
       <div className="bg-surface text-on-surface min-h-screen font-sans selection:bg-secondary-fixed selection:text-on-secondary-fixed antialiased">
-        {/* Main layout flow */}
         <Navbar />
         
         <main>
@@ -37,7 +31,6 @@ export default function App() {
         
         <Footer />
 
-        {/* Global drawers & responsive dialog panels */}
         <ProductQuickView />
         <BookingModal />
         <CartDrawer />
