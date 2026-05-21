@@ -11,7 +11,8 @@ export const BeekeepingTelemetry: React.FC = () => {
       {/* Decorative Forest Overlay Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,224,136,0.06),transparent_40%)] pointer-events-none"></div>
 
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+      {/* CORRECCIÓN: Contenedor estándar de Tailwind manteniendo el z-index relativo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Intro Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">

@@ -11,7 +11,7 @@ export const HotelSection: React.FC = () => {
 
   return (
     <section className="py-24 sm:py-32" id="hotel">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Intro */}
         <div className="text-center mb-16 space-y-4">
           <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">

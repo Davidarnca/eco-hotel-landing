@@ -60,7 +60,8 @@ export const BentoGallery: React.FC = () => {
 
   return (
     <section className="py-24 sm:py-32 bg-surface">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      {/* CORRECCIÓN: Contenedor estándar de Tailwind */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Intro */}
         <div className="text-center mb-16 space-y-4">
@@ -81,8 +82,7 @@ export const BentoGallery: React.FC = () => {
               onClick={() => setActivePhoto(item)}
               className={`${item.className} group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-md h-[300px] md:h-auto border border-outline-variant/15`}
             >
-              {// Blurred graphic background to avoid layout breaks on slow connections
-              }
+              {/* Blurred graphic background to avoid layout breaks on slow connections */}
               <div className="absolute inset-0 bg-surface-container z-0 animate-pulse"></div>
 
               {/* Photo */}
@@ -99,7 +99,7 @@ export const BentoGallery: React.FC = () => {
               <div className="absolute top-4 right-4 z-30 flex gap-2">
                 <button
                   onClick={(e) => toggleFavorite(item.id, e)}
-                  className="p-2.5 rounded-full custom-glass border border-outline-variant/10 text-primary transition-all duration-300 hover:scale-115 focus:outline-none"
+                  className="p-2.5 rounded-full custom-glass border border-outline-variant/10 text-primary transition-all duration-300 hover:scale-110 focus:outline-none"
                 >
                   <Heart
                     className={`h-4.5 w-4.5 transition-colors ${

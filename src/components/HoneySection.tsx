@@ -8,7 +8,9 @@ export const HoneySection: React.FC = () => {
 
   return (
     <section className="py-24 sm:py-32 bg-surface" id="honey">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      {/* CORRECCIÓN: Contenedor estándar con padding responsivo nativo de Tailwind */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Intro Grid */}
         <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
           <div className="w-full lg:w-1/2 space-y-6 order-2 lg:order-1">
@@ -133,7 +135,7 @@ export const HoneySection: React.FC = () => {
                       onClick={() => setSelectedProduct(product)}
                       className="text-primary hover:text-secondary font-sans text-[10px] font-bold tracking-widest uppercase transition-colors"
                     >
-                      Ver Atributos &gt;
+                      Ver Atributos {'>'}
                     </button>
                   </div>
                 </div>

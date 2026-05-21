@@ -27,7 +27,7 @@ export const ExperiencesSection: React.FC = () => {
 
   return (
     <section className="py-24 sm:py-32 bg-surface-container-low" id="experiences">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center mb-20 space-y-4">

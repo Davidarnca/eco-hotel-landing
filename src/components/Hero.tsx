@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+
 import heroBg from '../assets/finca.jpg';
 
 export const Hero: React.FC = () => {

@@ -36,7 +36,8 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-primary text-on-primary w-full py-20 relative overflow-hidden border-t border-white/5">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      {/* CORRECCIÓN: Contenedor estándar de Tailwind */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           
           {/* Brand Presentation */}
@@ -102,8 +103,9 @@ export const Footer: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="relative border-b border-white/20 pb-2">
+                  {/* CORRECCIÓN: className en lugar de class */}
                   <input
-                    class="w-full bg-transparent text-sm text-white py-1 focus:outline-none placeholder:text-white/40 font-sans"
+                    className="w-full bg-transparent text-sm text-white py-1 focus:outline-none placeholder:text-white/40 font-sans"
                     placeholder="Tu correo electrónico"
                     type="email"
                     value={email}
