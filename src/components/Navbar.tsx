@@ -20,10 +20,10 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { label: 'Miel', href: '#honey' },
-    { label: 'Experiencias', href: '#experiences' },
+    { label: 'Avistamiento', href: '#honey' },
+    { label: 'Miel', href: '#experiences' },
     { label: 'Bio-Hotel', href: '#hotel' },
-    { label: 'Telemetría', href: '#telemetry' }
+    { label: 'Vive la Experiencia', href: '#telemetry' }
   ];
 
   return (
@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
           {/* Logo Brand */}
           <a href="#" className="flex items-center gap-3 group focus:outline-none">
             <svg
-              className="h-10 w-10 text-primary transition-transform duration-500 group-hover:rotate-12"
+              className={`h-10 w-10 transition-transform duration-500 group-hover:rotate-12 ${scrolled ? 'text-primary' : 'text-white'}`}
               viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +53,8 @@ export const Navbar: React.FC = () => {
                 fill="#ffe088"
               />
             </svg>
-            <span className="font-display text-2xl font-bold tracking-tight text-primary transition-colors duration-300 group-hover:text-secondary">
-              Finca Terra
+            <span className={`font-display text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-secondary ${scrolled ? 'text-primary' : 'text-white'}`}>
+              Panales de vida
             </span>
           </a>
 
@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-sans text-xs font-semibold tracking-widest uppercase text-on-surface-variant hover:text-secondary transition-colors duration-300"
+                  className={`font-sans text-xs font-semibold tracking-widest uppercase hover:text-secondary transition-colors duration-300 ${scrolled ? 'text-on-surface-variant' : 'text-white'}`}
                 >
                   {item.label}
                 </a>
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
               {/* My bookings badge action */}
               <button
                 onClick={() => setBookingsOpen(true)}
-                className="relative p-2 text-primary hover:text-secondary hover:bg-surface-container/50 rounded-full transition-all duration-300 focus:outline-none"
+                className={`relative p-2 hover:text-secondary hover:bg-surface-container/50 rounded-full transition-all duration-300 focus:outline-none ${scrolled ? 'text-primary' : 'text-white'}`}
                 title="Mis Reservas"
               >
                 <Calendar className="h-5 w-5" />
@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
               {/* Shopping Cart button */}
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative p-2 text-primary hover:text-secondary hover:bg-surface-container/50 rounded-full transition-all duration-300 focus:outline-none"
+                className={`relative p-2 hover:text-secondary hover:bg-surface-container/50 rounded-full transition-all duration-300 focus:outline-none ${scrolled ? 'text-primary' : 'text-white'}`}
                 title="Carrito de Compras"
               >
                 <ShoppingBag className="h-5 w-5" />
@@ -118,7 +118,7 @@ export const Navbar: React.FC = () => {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setBookingsOpen(true)}
-              className="relative p-2 text-primary rounded-full hover:bg-surface-container"
+              className={`relative p-2 rounded-full hover:bg-surface-container ${scrolled ? 'text-primary' : 'text-white'}`}
             >
               <Calendar className="h-5 w-5" />
               {bookingsCount > 0 && (
@@ -130,7 +130,7 @@ export const Navbar: React.FC = () => {
 
             <button
               onClick={() => setCartOpen(true)}
-              className="relative p-2 text-primary rounded-full hover:bg-surface-container"
+              className={`relative p-2 rounded-full hover:bg-surface-container ${scrolled ? 'text-primary' : 'text-white'}`}
             >
               <ShoppingBag className="h-5 w-5" />
               {cartItemsCount > 0 && (
@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-primary ml-1 focus:outline-none"
+              className={`p-2 ml-1 focus:outline-none ${scrolled ? 'text-primary' : 'text-white'}`}
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

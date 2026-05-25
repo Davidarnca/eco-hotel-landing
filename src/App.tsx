@@ -13,6 +13,7 @@ import { ProductQuickView } from './components/ProductQuickView';
 import { BookingModal } from './components/BookingModal';
 import { CartDrawer } from './components/CartDrawer';
 import { BookingsDrawer } from './components/BookingsDrawer';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <BookingModal />
         <CartDrawer />
         <BookingsDrawer />
+        <WhatsAppButton />
       </div>
     </AppProvider>
   );
