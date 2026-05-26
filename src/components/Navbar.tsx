@@ -20,10 +20,10 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { label: 'Avistamiento', href: '#honey' },
-    { label: 'Miel', href: '#experiences' },
+    { label: 'Avistamiento', href: '#avistamiento' },
+    { label: 'Miel', href: '#honey' },
     { label: 'Bio-Hotel', href: '#hotel' },
-    { label: 'Vive la Experiencia', href: '#telemetry' }
+    { label: 'Vive la Experiencia', href: '#experiences' }
   ];
 
   return (

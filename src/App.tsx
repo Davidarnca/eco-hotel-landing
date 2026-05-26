@@ -1,11 +1,13 @@
 import { AppProvider} from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { HoneySection } from './components/HoneySection';
+import { AboutSection } from './components/AboutSection';
 import { ExperiencesSection } from './components/ExperiencesSection';
+import { BeeWatchingSection } from './components/BeeWatchingSection';
 import { HotelSection } from './components/HotelSection';
 import { BeekeepingTelemetry } from './components/BeekeepingTelemetry';
 import { BentoGallery } from './components/BentoGallery';
+import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
 // Modales y Drawers Globales
@@ -14,6 +16,7 @@ import { BookingModal } from './components/BookingModal';
 import { CartDrawer } from './components/CartDrawer';
 import { BookingsDrawer } from './components/BookingsDrawer';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { InteractiveBee } from './components/InteractiveBee';
 
 export default function App() {
   return (
@@ -23,11 +26,13 @@ export default function App() {
         
         <main>
           <Hero />
-          <HoneySection />
+          <AboutSection />
+          <BeeWatchingSection />
           <ExperiencesSection />
           <HotelSection />
           <BeekeepingTelemetry />
           <BentoGallery />
+          <ContactSection />
         </main>
         
         <Footer />
@@ -37,6 +42,7 @@ export default function App() {
         <CartDrawer />
         <BookingsDrawer />
         <WhatsAppButton />
+        <InteractiveBee />
       </div>
     </AppProvider>
   );
