@@ -26,16 +26,16 @@ export const ExperiencesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-surface-container-low" id="experiences">
+    <section className="py-24 sm:py-32 bg-surface-container-low" id="miel">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title */}
         <div className="text-center mb-20 space-y-4">
           <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">
             ECOTURISMO INTERACTIVO DE BAJO IMPACTO
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold text-primary">
-            Experiencias de Conexión
+            Miel
           </h2>
           <div className="h-0.5 w-16 bg-secondary mx-auto"></div>
         </div>
@@ -55,7 +55,7 @@ export const ExperiencesSection: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={exp.imageUrl}
                 />
-                
+
                 {/* Category Badge overlay */}
                 <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-primary/95 text-white font-sans text-[10px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full backdrop-blur-md">
                   {getCategoryIcon(exp.category)}

@@ -21,9 +21,9 @@ export const Navbar: React.FC = () => {
 
   const menuItems = [
     { label: 'Avistamiento', href: '#avistamiento' },
-    { label: 'Miel', href: '#honey' },
+    { label: 'Miel', href: '#miel' },
     { label: 'Bio-Hotel', href: '#hotel' },
-    { label: 'Vive la Experiencia', href: '#experiences' }
+    { label: 'Vive la Experiencia', href: '#vive' }
   ];
 
   return (

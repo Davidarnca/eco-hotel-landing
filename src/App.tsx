@@ -23,18 +23,18 @@ export default function App() {
     <AppProvider>
       <div className="bg-surface text-on-surface min-h-screen font-sans selection:bg-secondary-fixed selection:text-on-secondary-fixed antialiased">
         <Navbar />
-        
+
         <main>
           <Hero />
           <AboutSection />
           <BeeWatchingSection />
           <ExperiencesSection />
           <HotelSection />
-          <BeekeepingTelemetry />
+          {/* <BeekeepingTelemetry /> */}
           <BentoGallery />
           <ContactSection />
         </main>
-        
+
         <Footer />
 
         <ProductQuickView />

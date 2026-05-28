@@ -1,159 +1,197 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Eye, Hexagon, Shield, HandHeart, ChevronDown } from 'lucide-react';
+import { Eye, Hexagon, Shield, HandHeart, ArrowRight, User, Image as ImageIcon } from 'lucide-react';
 import miradorImg from '../assets/mirador.jpeg';
-import colmenasImg from '../assets/colmenas.jpeg';
 import interaccionImg from '../assets/interaccion.jpeg';
-import proteccionImg from '../assets/proteccion.jpeg';
+import interaccion1Img from '../assets/interaccion_1.jpeg';
+import interaccion3Img from '../assets/vista.jpeg';
+import interaccion2Img from '../assets/polen.jpeg';
+import trabajadoresImg from '../assets/trabajadores.mp4';
+import colmenasImg from '../assets/colmenas.jpeg';
+import proteccionImg from '../assets/proteccion2.jpeg';
+import { GalleryModal, MediaItem } from './GalleryModal';
 
 const topics = [
   {
     id: 'mirador',
-    title: 'Mirador',
+    title: 'Visita al Mirador',
+    category: 'OBSERVATORIO',
     icon: Eye,
+    difficulty: 'FÁCIL',
+    maxPeople: 12,
+    duration: '45 MINUTOS',
     shortDesc: 'Observación segura de la vida dentro del panal a través de nuestros ventanales especializados.',
     fullDesc: 'Adéntrate en nuestro mirador de cristal, diseñado para que puedas contemplar de cerca la fascinante "danza de las abejas" y la intrincada organización de la colonia. Es una experiencia inmersiva y 100% segura, ideal para familias y curiosos que desean ver la magia de la reina y sus obreras sin alterar su entorno natural.',
-    color: 'text-amber-400',
-    bg: 'bg-amber-500/20',
     bgImage: miradorImg
   },
   {
     id: 'colmenas',
-    title: 'Colmenas',
+    title: 'Exploración de Colmenas',
+    category: 'COLMENAS',
     icon: Hexagon,
-    shortDesc: 'Explora la arquitectura perfecta donde nace la miel y se desarrolla el ecosistema.',
+    difficulty: 'MODERADO',
+    maxPeople: 8,
+    duration: '1.5 HORAS',
+    shortDesc: 'Descubre la arquitectura perfecta donde nace la miel y se desarrolla el ecosistema de la colonia.',
     fullDesc: 'Descubre cómo funcionan nuestras colmenas. Aprenderás sobre el diseño de las estructuras, la diferencia entre las alzas melarias y la cámara de cría, y cómo las abejas utilizan el propóleo para desinfectar y sellar su hogar. Comprender la colmena es entender una de las sociedades más perfectas de la naturaleza.',
-    color: 'text-orange-400',
-    bg: 'bg-orange-500/20',
     bgImage: colmenasImg
   },
   {
     id: 'interaccion',
-    title: 'Interacción',
+    title: 'Interacción Directa',
+    category: 'INTERACCIÓN',
     icon: HandHeart,
-    shortDesc: 'Acércate de manera ética y consciente a las abejas con la guía de nuestros expertos.',
+    difficulty: 'MODERADO',
+    maxPeople: 6,
+    duration: '2 HORAS',
+    shortDesc: 'Acércate de manera ética y consciente a las abejas guiado por nuestros expertos apicultores.',
     fullDesc: 'Siente la vibración del enjambre. Te proporcionaremos equipo de protección profesional y te enseñaremos las técnicas de acercamiento suave. Aprenderás a utilizar el ahumador correctamente, identificar los sonidos de las abejas y realizar una inspección básica, siempre priorizando el bienestar de los polinizadores.',
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-500/20',
     bgImage: interaccionImg
   },
   {
     id: 'proteccion',
-    title: 'Protección',
+    title: 'Charla de Conservación',
+    category: 'PROTECCIÓN',
     icon: Shield,
-    shortDesc: 'Conoce nuestros esfuerzos por preservar los polinizadores y cómo puedes ayudar.',
+    difficulty: 'FÁCIL',
+    maxPeople: 20,
+    duration: '1 HORA',
+    shortDesc: 'Conoce nuestros esfuerzos por preservar a los polinizadores y cómo puedes ayudar desde casa.',
     fullDesc: 'Las abejas enfrentan serios desafíos debido al cambio climático y los pesticidas. En esta charla interactiva, te mostramos cómo Santuario de Chame es un refugio libre de químicos para ellas. Te enseñaremos qué plantas puedes cultivar en casa y qué acciones tomar para convertirte en un guardián de las abejas en tu propia comunidad.',
-    color: 'text-sky-400',
-    bg: 'bg-sky-500/20',
     bgImage: proteccionImg
   }
 ];
 
-export const BeeWatchingSection: React.FC = () => {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+// Función para obtener el contenido multimedia específico de cada topic
+const getMediaForTopic = (topicId: string): MediaItem[] => {
+  switch (topicId) {
+    case 'mirador':
+      return [
+        { type: 'image', src: miradorImg, caption: 'Vista panorámica del mirador' },
+        { type: 'video', src: trabajadoresImg, caption: 'Abejas en acción desde el mirador' },
+        // Más imágenes específicas del mirador...
+      ];
+    case 'colmenas':
+      return [
+        { type: 'image', src: miradorImg, caption: 'Vista panorámica del mirador' },
+        { type: 'video', src: trabajadoresImg, caption: 'Abejas en acción desde el mirador' },
+        // Más imágenes específicas del mirador....
+      ];
+    case 'interaccion':
+      return [
+        { type: 'image', src: interaccion2Img, caption: 'Abeja trabajando' },
+        { type: 'image', src: interaccion1Img, caption: 'Patos en el camino' },
+        { type: 'image', src: interaccion3Img, caption: 'Una buena vista' },
+        // Más imágenes de interacción...
+      ];
+    case 'proteccion':
+      return [
+        { type: 'image', src: miradorImg, caption: 'Vista panorámica del mirador' },
+        { type: 'video', src: trabajadoresImg, caption: 'Abejas en acción desde el mirador' },
+        // Más imágenes específicas del mirador...
+      ];
+    default:
+      return [];
+  }
+};
 
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+export const BeeWatchingSection: React.FC = () => {
+  const [selectedTopic, setSelectedTopic] = useState<typeof topics[0] | null>(null);
 
   return (
-    <section id="avistamiento" className="py-24 bg-surface relative overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <section id="avistamiento" className="py-24 sm:py-32 bg-surface-container-low relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 rounded-full text-amber-600 font-bold text-xs uppercase tracking-widest mb-6"
-          >
-            <Hexagon className="w-4 h-4" />
-            <span>Nuevas Experiencias</span>
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-6"
-          >
-            Avistamiento de <span className="text-primary">Abejas</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-on-surface-variant leading-relaxed"
-          >
+        <div className="text-center mb-20 space-y-4">
+          <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">
+            NUEVAS EXPERIENCIAS
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-primary">
+            Avistamiento de Abejas
+          </h2>
+          <div className="h-0.5 w-16 bg-secondary mx-auto"></div>
+          <p className="font-sans text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-3xl mx-auto pt-4">
             Sumérgete en el fascinante mundo de la apicultura. Te invitamos a conocer el corazón de nuestro ecosistema, donde podrás observar, interactuar y aprender sobre la vida de estos increíbles polinizadores en un entorno seguro y respetuoso.
-          </motion.p>
+          </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {topics.map((topic, index) => {
-            const isExpanded = expandedId === topic.id;
+        {/* UX/UI Grid: 4 columns to keep them inline without overflowing the page.
+            We use a portrait aspect ratio for the images so they feel tall, elegant, and substantial instead of 'narrow' */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {topics.map((topic) => {
             const Icon = topic.icon;
 
             return (
               <motion.div
                 key={topic.id}
                 layout
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, layout: { duration: 0.3 } }}
-                onClick={() => toggleExpand(topic.id)}
-                className={`group relative rounded-2xl p-6 cursor-pointer border overflow-hidden transition-shadow duration-300 flex flex-col h-full ${isExpanded ? 'border-primary/50 shadow-md' : 'border-outline-variant/30 shadow-sm'}`}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-2xl overflow-hidden border border-outline-variant/10 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
               >
-                {/* Background Image with Overlay */}
-                <img
-                  src={topic.bgImage}
-                  alt={topic.title}
-                  className="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 z-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
+                {/* Card Image area - Portrait aspect ratio so 4 columns don't feel cramped */}
+                <motion.div layout="position" className="relative overflow-hidden aspect-[4/3]">
+                  <img
+                    alt={topic.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    src={topic.bgImage}
+                  />
 
-                <div className="relative z-10 flex flex-col h-full text-white">
-                  <motion.div layout="position" className="flex items-center justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-full ${topic.bg} ${topic.color} flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10`}>
-                      <Icon className="w-6 h-6" />
+                  {/* Dark Green Category Badge (Matching the image) */}
+                  <span className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[#0a2312] text-white font-sans text-[10px] font-bold tracking-wider uppercase px-4 py-2 rounded-full shadow-lg">
+                    <Icon className="h-4 w-4" />
+                    {topic.category}
+                  </span>
+
+                  {/* Subtle gradient overlay to make image feel more premium at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </motion.div>
+
+                {/* Card content area */}
+                <div className="p-8 flex flex-col flex-grow justify-between gap-6">
+
+                  <motion.div layout="position" className="space-y-3">
+                    {/* Tags row: Max People only */}
+                    <div className="flex justify-end items-center mb-1">
+                      <span className="flex items-center gap-1.5 text-[11px] font-medium text-on-surface-variant">
+                        <User className="h-3.5 w-3.5" />
+                        Máx: {topic.maxPeople}
+                      </span>
                     </div>
-                    <motion.div
-                      animate={{ rotate: isExpanded ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-white/80"
-                    >
-                      <ChevronDown className="w-5 h-5" />
-                    </motion.div>
+
+                    {/* Title */}
+                    <h3 className="font-display text-2xl font-bold text-primary leading-tight">
+                      {topic.title}
+                    </h3>
+
+                    {/* Duration */}
+                   {/* <p className="font-sans text-[10px] font-bold text-secondary uppercase tracking-widest">
+                      {topic.duration}
+                    </p>*/}
+
+                    {/* Short Description */}
+                    <p className="font-sans text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4">
+                      {topic.shortDesc}
+                    </p>
                   </motion.div>
 
-                  <motion.h3 layout="position" className="text-xl font-bold font-display text-white mb-3">
-                    {topic.title}
-                  </motion.h3>
+                  {/* Prominent Action Button to Open Modal */}
+                  <motion.div
+                    layout="position"
+                    className="mt-auto pt-4"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    >
+                    <button
+                        onClick={() => setSelectedTopic(topic)}
+                        className="w-full bg-gradient-to-r from-primary to-primary-container hover:from-primary-container hover:to-primary text-white text-xs font-bold uppercase tracking-widest py-3.5 px-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn"
+                    >
+                        <ImageIcon className="h-4 w-4 transition-transform duration-300 group-hover/btn:scale-110" />
+                        <span>Ver Galería</span>
+                        <ArrowRight className="h-4 w-4 transition-all duration-300 group-hover/btn:translate-x-1" />
+                    </button>
+                </motion.div>
 
-                  <motion.p layout="position" className="text-white/90 text-sm leading-relaxed flex-grow font-medium">
-                    {topic.shortDesc}
-                  </motion.p>
-
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                        animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
-                        exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-4 border-t border-white/20">
-                          <p className="text-white text-sm leading-relaxed font-medium drop-shadow-md">
-                            {topic.fullDesc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               </motion.div>
             );
@@ -161,6 +199,16 @@ export const BeeWatchingSection: React.FC = () => {
         </div>
 
       </div>
+
+      <AnimatePresence>
+  {selectedTopic && (
+    <GalleryModal
+      isOpen={!!selectedTopic}
+      onClose={() => setSelectedTopic(null)}
+      media={getMediaForTopic(selectedTopic.id)}
+    />
+  )}
+</AnimatePresence>
     </section>
   );
 };
