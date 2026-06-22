@@ -38,7 +38,7 @@ export const ProductQuickView: React.FC = () => {
         <div className="p-6 bg-primary text-white flex justify-between items-center shrink-0">
           <div>
             <p className="text-[10px] uppercase font-bold tracking-widest text-[#ffe088] mb-0.5">DETALLE DE PRODUCTO</p>
-            <h3 className="font-display text-xl font-bold leading-tight">{selectedProduct.name}</h3>
+            <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">{selectedProduct.name}</h3>
           </div>
           <button
             onClick={() => setSelectedProduct(null)}
@@ -96,24 +96,24 @@ export const ProductQuickView: React.FC = () => {
 
           {/* Nutritional facts structure */}
           {selectedProduct.nutritionalFacts && (
-            <div className="bg-surface-container rounded-xl p-5 border border-outline-variant/20">
+            <div className="bg-surface-container rounded-xl p-6 border border-outline-variant/20">
               <p className="font-sans text-[10px] font-bold tracking-wider text-primary uppercase mb-3 flex items-center gap-1.5">
                 <HelpCircle className="h-3.5 w-3.5 text-secondary" />
                 Información Nutricional (por porción de 100g)
               </p>
               
               <div className="grid grid-cols-3 gap-2 text-center text-xs font-sans text-on-surface-variant">
-                <div className="bg-white p-3 rounded-lg border border-outline-variant/10">
+                <div className="bg-white p-4 rounded-lg border border-outline-variant/10">
                   <p className="text-[10px] text-on-surface-variant/50 uppercase">Calorías</p>
                   <p className="font-bold text-primary mt-1">{selectedProduct.nutritionalFacts.energyCode}</p>
                 </div>
 
-                <div className="bg-white p-3 rounded-lg border border-outline-variant/10">
+                <div className="bg-white p-4 rounded-lg border border-outline-variant/10">
                   <p className="text-[10px] text-on-surface-variant/50 uppercase">Azúcares</p>
                   <p className="font-bold text-primary mt-1">{selectedProduct.nutritionalFacts.sugar}</p>
                 </div>
 
-                <div className="bg-white p-3 rounded-lg border border-outline-variant/10">
+                <div className="bg-white p-4 rounded-lg border border-outline-variant/10">
                   <p className="text-[10px] text-on-surface-variant/50 uppercase">Proteínas</p>
                   <p className="font-bold text-primary mt-1">{selectedProduct.nutritionalFacts.protein}</p>
                 </div>

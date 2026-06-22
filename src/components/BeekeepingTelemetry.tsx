@@ -7,7 +7,7 @@ export const BeekeepingTelemetry: React.FC = () => {
   const { hiveSensors, refreshSensors } = useApp();
 
   return (
-    <section className="py-24 sm:py-32 bg-primary text-white relative overflow-hidden" id="telemetry">
+    <section className="py-16 md:py-24 lg:py-32 bg-primary text-white relative overflow-hidden" id="telemetry">
       {/* Decorative Forest Overlay Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,224,136,0.06),transparent_40%)] pointer-events-none"></div>
 
@@ -17,10 +17,10 @@ export const BeekeepingTelemetry: React.FC = () => {
         {/* Intro Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
           <div className="space-y-4 max-w-2xl">
-            <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">
+            <span className="font-sans text-2xl sm:text-3xl font-bold tracking-[0.2em] text-secondary uppercase block">
               APICULTURA TECNOLÓGICA ECO-INTELIGENTE
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+            <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
               Telemetría de las Colmenas
             </h2>
             <div className="h-0.5 w-16 bg-secondary"></div>
@@ -29,7 +29,7 @@ export const BeekeepingTelemetry: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <button
               onClick={() => refreshSensors()}
               className="bg-secondary hover:bg-secondary-fixed text-primary px-6 py-3.5 rounded-lg font-sans text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:scale-[1.03] shadow-md flex items-center justify-center gap-2"
@@ -41,8 +41,8 @@ export const BeekeepingTelemetry: React.FC = () => {
         </div>
 
         {/* Informative connection banner */}
-        <div className="bg-primary-container/60 border border-on-primary-container/20 rounded-xl p-5 mb-10 flex flex-col md:row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+        <div className="bg-primary-container/60 border border-on-primary-container/20 rounded-xl p-6 mb-12 flex flex-col md:row items-start md:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
             <div className="h-2.5 w-2.5 bg-green-500 rounded-full animate-pulse"></div>
             <p className="font-sans text-xs text-white/95">
               <span className="font-bold text-secondary-fixed">Canales Listos:</span> Interfaces mapeadas bajo modelo de datos unificado en <span className="font-mono text-secondary-fixed">src/types.ts</span>. Listas de colecciones de red preparadas para conexión persistente remota.
@@ -65,7 +65,7 @@ export const BeekeepingTelemetry: React.FC = () => {
               {/* Card Header name and activity scale */}
               <div className="flex justify-between items-start gap-4">
                 <div>
-                  <h3 className="font-display text-xl font-bold text-white mb-1">
+                  <h3 className="font-display text-lg md:text-xl font-bold text-white mb-1">
                     {hive.name}
                   </h3>
                   <p className="font-sans text-[10px] text-white/50 uppercase tracking-widest">
@@ -83,9 +83,9 @@ export const BeekeepingTelemetry: React.FC = () => {
               </div>
 
               {/* Central readout sensors list (T°, Hum, Honey) */}
-              <div className="grid grid-cols-3 gap-3">
-                {/* Temperature Card */}
-                <div className="p-3 bg-primary/40 rounded-xl text-center space-y-1">
+              <div className="grid grid-cols-3 gap-4">
+                {/* Col 1 */}
+                <div className="p-4 bg-primary/40 rounded-xl text-center space-y-2">
                   <div className="flex justify-center text-secondary">
                     <Thermometer className="h-4.5 w-4.5" />
                   </div>
@@ -94,7 +94,7 @@ export const BeekeepingTelemetry: React.FC = () => {
                 </div>
 
                 {/* Humidity Card */}
-                <div className="p-3 bg-primary/40 rounded-xl text-center space-y-1">
+                <div className="p-4 bg-primary/40 rounded-xl text-center space-y-2">
                   <div className="flex justify-center text-sky-400">
                     <Droplets className="h-4.5 w-4.5" />
                   </div>
@@ -103,7 +103,7 @@ export const BeekeepingTelemetry: React.FC = () => {
                 </div>
 
                 {/* Honey storage card */}
-                <div className="p-3 bg-primary/40 rounded-xl text-center space-y-1">
+                <div className="p-4 bg-primary/40 rounded-xl text-center space-y-2">
                   <div className="flex justify-center text-amber-500">
                     <Layers className="h-4.5 w-4.5" />
                   </div>

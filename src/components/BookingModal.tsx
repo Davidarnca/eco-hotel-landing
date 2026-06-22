@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { X, Calendar, Users, FileText, CheckCircle2 } from 'lucide-react';
+import { X, Calendar, Users, FileText, CheckCircle2, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const BookingModal: React.FC = () => {
@@ -68,6 +68,15 @@ export const BookingModal: React.FC = () => {
         totalPrice,
         specialRequests
       });
+
+      // Integración de WhatsApp
+      const waNumber = "573112116809"; 
+      
+      const message = `¡Hola Santuario de Chame! 🐝\n\nQuiero solicitar una reserva para:\n*${targetName}*\n\n👤 *A nombre de:* ${userName}\n📅 *Fecha:* ${bookingDate}\n👥 *Personas:* ${guestsCount}\n💰 *Monto Estimado:* $${totalPrice} USD\n\n*Detalles adicionales:* ${specialRequests ? specialRequests : 'Ninguno'}\n\nQuisiera finalizar mi reservación. ¡Gracias!`;
+      
+      const whatsappUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+
       setSuccess(true);
     } catch (err) {
       setErrorMessage('Error al realizar la reserva. Inténtalo de nuevo.');
@@ -100,7 +109,7 @@ export const BookingModal: React.FC = () => {
               <p className="text-[10px] uppercase font-bold tracking-widest text-secondary-fixed mb-0.5">
                 {isRoom ? 'RESERVA DE ALOJAMIENTO' : 'RESERVA DE EXPERIENCIA'}
               </p>
-              <h3 className="font-display text-xl font-bold leading-tight">{targetName}</h3>
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">{targetName}</h3>
             </div>
             <button
               onClick={handleClose}
@@ -120,7 +129,7 @@ export const BookingModal: React.FC = () => {
               >
                 <CheckCircle2 className="h-16 w-16 text-green-600 animate-bounce" />
                 <div className="space-y-2">
-                  <h4 className="font-display text-2xl font-bold text-primary">¡Reserva Registrada Exitosamente!</h4>
+                  <h4 className="font-display text-xl md:text-2xl font-bold text-primary">¡Reserva Registrada Exitosamente!</h4>
                   <p className="font-sans text-xs sm:text-sm text-on-surface-variant max-w-md">
                     Tu solicitud de reserva para <span className="font-bold text-primary">{targetName}</span> el <span className="font-bold text-primary">{bookingDate}</span> ha sido enviada con estado <span className="underline decoration-secondary decoration-2 font-bold">pendiente</span>.
                   </p>
@@ -154,7 +163,7 @@ export const BookingModal: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 font-sans">
                 {/* Form fields */}
-                <div className="grid grid-cols-1 gap-5">
+                <div className="grid grid-cols-1 gap-6">
                   
                   {/* Name field */}
                   <div>
@@ -233,7 +242,7 @@ export const BookingModal: React.FC = () => {
                 </div>
 
                 {errorMessage && (
-                  <p className="text-xs font-semibold text-red-500 bg-red-400/10 p-3 rounded-lg border border-red-500/20">
+                  <p className="text-xs font-semibold text-red-500 bg-red-400/10 p-4 rounded-lg border border-red-500/20">
                     {errorMessage}
                   </p>
                 )}
@@ -258,7 +267,10 @@ export const BookingModal: React.FC = () => {
                         Procesando...
                       </>
                     ) : (
-                      'Confirmar Reserva'
+                      <>
+                        Confirmar por WhatsApp
+                        <MessageCircle className="h-4 w-4 ml-1" />
+                      </>
                     )}
                   </button>
                 </div>

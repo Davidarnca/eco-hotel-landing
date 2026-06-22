@@ -4,13 +4,13 @@ import { MapPin, Phone, Mail, Send, MessageSquare } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-surface overflow-hidden relative">
+    <section id="contact" className="py-12 md:py-20 lg:py-24 bg-[#FAF8F5] overflow-hidden relative">
       {/* Elemento decorativo de fondo */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-surface-variant/30 rounded-l-[100px] -z-10 hidden lg:block"></div>
 
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center mb-12 lg:mb-16 space-y-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-6"
+            className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-on-surface mb-6"
           >
             ¿Listo para tu <span className="text-primary">escape a la naturaleza?</span>
           </motion.h2>
@@ -47,9 +47,9 @@ export const ContactSection: React.FC = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 flex flex-col gap-8 bg-surface-variant p-8 md:p-10 rounded-3xl shadow-sm border border-outline-variant/20"
+            className="lg:col-span-2 flex flex-col gap-8 bg-surface-variant p-8 lg:p-12 rounded-3xl shadow-sm border border-outline-variant/20"
           >
-            <h3 className="text-2xl font-bold font-display text-on-surface mb-2">Información de Contacto</h3>
+            <h3 className="text-xl md:text-3xl font-bold font-display text-on-surface mb-2">Información de Contacto</h3>
             <p className="text-on-surface-variant mb-4">Nuestro equipo de recepción y atención te responderá lo más pronto posible.</p>
             
             <div className="flex flex-col gap-6">
@@ -58,7 +58,7 @@ export const ContactSection: React.FC = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-on-surface">Ubicación</h4>
+                  <h4 className="font-bold text-on-surface text-lg md:text-xl">Ubicación</h4>
                   <p className="text-on-surface-variant text-sm mt-1">Vereda Alta del Páramo, Km 14 Vía al Bosque Nuboso, Colombia.</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-on-surface">Teléfono / WhatsApp</h4>
+                  <h4 className="font-bold text-on-surface text-lg md:text-xl">Teléfono / WhatsApp</h4>
                   <p className="text-on-surface-variant text-sm mt-1">+57 300 000 0000</p>
                   <p className="text-on-surface-variant text-sm">Lun - Dom, 8:00am - 6:00pm</p>
                 </div>
@@ -79,7 +79,7 @@ export const ContactSection: React.FC = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-on-surface">Correo Electrónico</h4>
+                  <h4 className="font-bold text-on-surface text-lg md:text-xl">Correo Electrónico</h4>
                   <p className="text-on-surface-variant text-sm mt-1">reservas@santuariodechame.com</p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export const ContactSection: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 bg-surface p-8 md:p-10 rounded-3xl shadow-xl border border-outline-variant/10"
+            className="lg:col-span-3 bg-surface p-8 lg:p-12 rounded-3xl shadow-xl border border-outline-variant/10"
           >
             <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -2,11 +2,11 @@ import { AppProvider} from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
-import { ExperiencesSection } from './components/ExperiencesSection';
 import { BeeWatchingSection } from './components/BeeWatchingSection';
+import { HoneySection } from './components/HoneySection';
+import { ExperiencesSection } from './components/ExperiencesSection';
 import { HotelSection } from './components/HotelSection';
 import { BeekeepingTelemetry } from './components/BeekeepingTelemetry';
-import { BentoGallery } from './components/BentoGallery';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
@@ -28,10 +28,10 @@ export default function App() {
           <Hero />
           <AboutSection />
           <BeeWatchingSection />
-          <ExperiencesSection />
+          <HoneySection />
           <HotelSection />
           {/* <BeekeepingTelemetry /> */}
-          <BentoGallery />
+          <ExperiencesSection />
           <ContactSection />
         </main>
 

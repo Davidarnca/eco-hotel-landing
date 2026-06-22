@@ -44,7 +44,7 @@ export const CartDrawer: React.FC = () => {
         <div className="p-6 bg-primary text-white flex justify-between items-center shrink-0">
           <div className="flex items-center gap-2">
             <ShoppingBag className="h-5 w-5 text-secondary" />
-            <h3 className="font-display text-xl font-bold leading-tight">Tu Carrito de Compra</h3>
+            <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">Tu Carrito de Compra</h3>
           </div>
           <button onClick={handleClose} className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10">
             <X className="h-5 w-5" />
@@ -60,7 +60,7 @@ export const CartDrawer: React.FC = () => {
               className="text-center py-12 flex flex-col items-center justify-center space-y-4 font-sans"
             >
               <CheckCircle2 className="h-16 w-16 text-green-600 animate-bounce" />
-              <h4 className="font-display text-2xl font-bold text-primary">¡Pedido Generado!</h4>
+              <h4 className="font-display text-xl md:text-2xl font-bold text-primary">¡Pedido Generado!</h4>
               <p className="font-sans text-xs sm:text-sm text-on-surface-variant max-w-sm leading-relaxed">
                 Hemos registrado satisfactoriamente tu orden por <span className="font-bold text-primary">${grandTotal} USD</span>. Hecho bajo simulación de base de datos exitosa.
               </p>
@@ -96,7 +96,7 @@ export const CartDrawer: React.FC = () => {
                 {/* Details */}
                 <div className="flex-grow space-y-2">
                   <div className="flex justify-between items-start gap-4">
-                    <h4 className="text-sm font-bold text-primary leading-tight">{item.product.name}</h4>
+                    <h4 className="text-base font-bold text-primary leading-tight">{item.product.name}</h4>
                     <button
                       onClick={() => removeFromCart(item.product.id)}
                       className="text-on-surface-variant/40 hover:text-red-500 p-1 rounded-full transition-colors"

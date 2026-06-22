@@ -23,7 +23,7 @@ export const BookingsDrawer: React.FC = () => {
         <div className="p-6 bg-primary text-white flex justify-between items-center shrink-0">
           <div className="flex items-center gap-2">
             <Calendar className="h-5 w-5 text-secondary" />
-            <h3 className="font-display text-xl font-bold leading-tight">Mis Reservas</h3>
+            <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">Mis Reservas</h3>
           </div>
           <button onClick={() => setBookingsOpen(false)} className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10">
             <X className="h-5 w-5" />
@@ -32,7 +32,7 @@ export const BookingsDrawer: React.FC = () => {
 
         {/* List index */}
         <div className="flex-grow overflow-y-auto p-6 space-y-4">
-          <div className="p-3 bg-secondary-fixed/10 border border-secondary-fixed/20 rounded-lg text-[11px] font-sans text-on-secondary-container leading-relaxed">
+          <div className="p-4 bg-secondary-fixed/10 border border-secondary-fixed/20 rounded-lg text-[11px] font-sans text-on-secondary-container leading-relaxed">
             Las reservas enviadas desde esta sesión son añadidas inmediatamente al registro local simulando la transacción de escritura de Base de Datos para <span className="font-semibold text-primary">davidar25@gmail.com</span>.
           </div>
 
@@ -52,7 +52,7 @@ export const BookingsDrawer: React.FC = () => {
             bookings.map((booking) => (
               <div
                 key={booking.id}
-                className="p-5 bg-white rounded-xl border border-outline-variant/15 shadow-sm font-sans space-y-3 relative overflow-hidden"
+                className="p-6 bg-white rounded-xl border border-outline-variant/15 shadow-sm font-sans space-y-4 relative overflow-hidden"
               >
                 {/* Visual Status Ribbons */}
                 <div className="flex justify-between items-start gap-4">
@@ -60,7 +60,7 @@ export const BookingsDrawer: React.FC = () => {
                     <span className="text-[9px] uppercase tracking-widest text-on-surface-variant/50 font-bold block mb-1">
                       {booking.type === 'room' ? 'Hospedaje Bio-Hotel' : 'Guía de Ecoturismo'}
                     </span>
-                    <h4 className="text-sm font-bold text-primary leading-tight">{booking.targetName}</h4>
+                    <h4 className="text-base font-bold text-primary leading-tight">{booking.targetName}</h4>
                   </div>
                   
                   {/* Status pills */}

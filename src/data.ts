@@ -1,19 +1,21 @@
 import { HoneyProduct, TourismExperience, HotelRoom, HiveSensorData } from './types';
+import miel2Img from './assets/miel2.png'; // Un solo punto y con "i"
+import miel3Img from './assets/miel3.png'; // Un solo punto y con "i"
 
 export const HONEY_PRODUCTS: HoneyProduct[] = [
   {
     id: 'honey-01',
-    name: 'Miel de Páramo Silvestre',
-    scientificName: 'Mel ipomoea paramensis',
-    description: 'Néctar cosechado a más de 3,000 metros de altura, con notas sutiles de flores alpinas y romero silvestre.',
-    extendedDescription: 'Nuestra Miel de Páramo Silvestre es una joya única de la apicultura andina. Recolectada por abejas en estado semi-salvaje, presenta un color ámbar pálido translúcido y una cristalización lenta y fina. Su sabor inicial evoca la frescura de la niebla matutina, con notas florales intensas de mirtos, frailejones y romero de altura. Ideal para maridar con quesos maduros y tés herbales premium.',
-    price: 24,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbuO8_IhP4IkdL-R72KJ9Lqd1-2AdwRmgZuMRKDYICVs2upe9jHCP4qylab00tBr6HoL1wgekZlx-2re0STsvpIqNH2XBmF0_AeCVDDl0R2UwD_OafMhmbD-Wr7APC-snv8h4EERweg4J-eO0rRFmBsq0-iWET8PCQKpuByEHJT703USNo6Imk2DAd6yM2Z1bM4ixr43cZEww2xskN0-W_FtuYy_okRpWZoIFuKxUokd6OQoeqvWuviLCNkcnbqJNIdjHMqv2KsdQx',
-    rating: 4.9,
+    name: 'Miel de Abejas',
+    scientificName: '',
+    description: 'Frasco x 100 gr $ 20.000 más domicilio.',
+    extendedDescription: 'Nuestra miel es una joya única de la apicultura, cosechada con absoluto respeto y profunda conciencia ambiental. Disfruta de la presentación de 100g, ideal para degustar o para llevar contigo.',
+    price: 20000,
+    imageUrl: miel2Img,
+    rating: 5.0,
     reviewsCount: 124,
     availableQuantity: 45,
-    volume: '500g',
-    harvestSeason: 'Otoño',
+    volume: '100g',
+    harvestSeason: 'Actual',
     nutritionalFacts: {
       energyCode: '312 kcal',
       sugar: '78g',
@@ -22,116 +24,104 @@ export const HONEY_PRODUCTS: HoneyProduct[] = [
   },
   {
     id: 'honey-02',
-    name: 'Miel Orgánica de Eucalipto',
-    scientificName: 'Mel eucalyptus globulus',
-    description: 'Miel de color ámbar oscuro, profundo sabor maderoso y notas intensas de eucalipto balsámico y menta.',
-    extendedDescription: 'Nuestra miel de eucalipto es valorada medicinalmente por sus propiedades expectorantes y antisépticas. Proveniente de las áreas boscosas protegidas de la finca, posee un aroma persistente y balsámico, con una textura fluida y densa. Cosechada al final de la temporada de lluvias de primavera, captura la esencia de la floración exuberante.',
-    price: 18,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGlxyotVE7AkqmQZYm6y4kaFYgVdY1aZYTIP7Ipp948fdSUfZY_pSGFH821Iw4vA5QVm7FkpqCfdPSd0geqh9wlxxJhzN4EFCkV7y61XN-6h_rBeZRAcjkBNe4Ajf5pQgEyz2Er-eHsTgJo084nniMOZ9deIF-47n3PgmBIFkYNutfoH2KeWqj9wbGyvJV16bA7t6WWfCj_UiSppMODkdEYhLaZLLWL7sq0_-o4ybixd3hw6VE_w3q2FhdOU0PxmRhLYT7d5NGpTup',
-    rating: 4.8,
+    name: 'Miel de Abejas',
+    scientificName: '',
+    description: 'Frasco x 500 gr $ 40.000 más domicilio.',
+    extendedDescription: 'Nuestra miel es valorada por sus propiedades naturales, perfecta para endulzar tu vida. Cosechada en nuestro Santuario, esta presentación de 500g es ideal para toda la familia.',
+    price: 40000,
+    imageUrl: miel3Img,
+    rating: 5.0,
     reviewsCount: 89,
     availableQuantity: 60,
     volume: '500g',
-    harvestSeason: 'Primavera',
+    harvestSeason: 'Actual',
     nutritionalFacts: {
       energyCode: '304 kcal',
       sugar: '76g',
       protein: '0.3g'
-    }
-  },
-  {
-    id: 'honey-03',
-    name: 'Panal del Bosque Nativo',
-    description: 'Panal de miel 100% natural y masticable cosechado directamente de nuestros apiarios en los robledales protegidos.',
-    extendedDescription: 'Consumir el panal de abejas directamente es la forma más pura y ancestral de disfrutar la miel. Conserva todos los aceites esenciales, enzimas ricas, propóleo y polen que suelen perderse en el filtrado. Cortado a mano en secciones perfectas, ofrece una experiencia interactiva deliciosa de masticar, excelente junto a higos secos y frutos secos.',
-    price: 32,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGlxyotVE7AkqmQZYm6y4kaFYgVdY1aZYTIP7Ipp948fdSUfZY_pSGFH821Iw4vA5QVm7FkpqCfdPSd0geqh9wlxxJhzN4EFCkV7y61XN-6h_rBeZRAcjkBNe4Ajf5pQgEyz2Er-eHsTgJo084nniMOZ9deIF-47n3PgmBIFkYNutfoH2KeWqj9wbGyvJV16bA7t6WWfCj_UiSppMODkdEYhLaZLLWL7sq0_-o4ybixd3hw6VE_w3q2FhdOU0PxmRhLYT7d5NGpTup',
-    rating: 5.0,
-    reviewsCount: 42,
-    availableQuantity: 15,
-    volume: '400g Panal',
-    harvestSeason: 'Verano',
-    nutritionalFacts: {
-      energyCode: '315 kcal',
-      sugar: '75g',
-      protein: '0.5g'
     }
   }
 ];
 
 export const EXPERIENCES: TourismExperience[] = [
   {
-    id: 'exp-hiking',
-    title: 'Senderismo Guiado y Avistamiento de Aves',
-    tagline: 'Sintoniza con el silencio y los coros del bosque nativo.',
-    description: 'Recorridos silenciosos diseñados para el avistamiento de aves endémicas y el reconocimiento de flora medicinal autóctona.',
-    extendedDescription: 'Acompañado por nuestros guías naturalistas locales, te adentrarás en senderos vírgenes de bosque andino nuboso. El recorrido de baja intensidad promueve el baño de bosque ("shinrin-yoku") y el silencio meditativo, permitiéndote conectar con más de 45 especies de aves registradas en nuestro santuario. Un momento único de desintoxicación urbana.',
-    category: 'hiking',
-    duration: '4 horas',
-    price: 35,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOG1T7iZtP7k2e0rX2Cul9Dxd-2-mEyc1ZdtEyOhxkz0i3SG_nm63_QbUnoLyp0fg_2eyK9Cv8Y2prMVptx9LM6uTWS8WfWMU-9kEu5HuPDun3yp19zN3xTsUPJC78-24JSmHCRg2zRJ5GzZEAICR3Y5-nqpvV9KRgvkHlAXGNzAveTCkbFHoPcnlvsfdGqrDIYGmlhbRa2WzUTjD0lSBnmYSVsZOobhpmPOv7_KToOesZoSRBVHZnwmhfQAfbvSlWBmWqHdU6OqNz',
-    capacityMax: 8,
-    difficulty: 'moderado',
-    included: [
-      'Guía bilingüe experto en ecología',
-      'Préstamos de binoculares profesionales',
-      'Infusión silvestre de romero y miel de paramo',
-      'Guía impresa de aves endémicas de la finca'
-    ],
-    recommendations: [
-      'Calzado de montaña con buen agarre',
-      'Chaqueta impermeable o cortavientos',
-      'Botella de agua personal reutilizable',
-      'Cámara fotográfica o celular con suficiente espacio'
+    id: 'exp-hospedaje',
+    title: 'Hospedaje Rural',
+    tagline: 'Desconecta en la naturaleza.',
+    description: 'Cabañas ecológicas y habitaciones rústicas integradas en el entorno natural con todas las comodidades.',
+    extendedDescription: 'Nuestro hospedaje rural...',
+    category: 'alojamiento',
+    duration: '1 NOCHE MIN.',
+    price: 85,
+    imageUrl: 'https://images.unsplash.com/photo-1542314831-c6a4d14fff88?q=80&w=1000&auto=format&fit=crop',
+    capacityMax: 4,
+    difficulty: 'fácil',
+    included: [],
+    recommendations: [],
+    gallery: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1542314831-c6a4d14fff88?q=80&w=1200&auto=format&fit=crop', caption: 'Nuestras Cabañas' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop', caption: 'Habitación Interior' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?q=80&w=1200&auto=format&fit=crop', caption: 'Desayuno Incluido' }
+    ]
+  },
+  {
+    id: 'exp-visita',
+    title: 'Visita Guiada',
+    tagline: 'Conoce nuestro ecosistema.',
+    description: 'Recorrido guiado por los senderos ecológicos, conociendo la flora, fauna y la granja sostenible.',
+    extendedDescription: 'Acompañado de expertos...',
+    category: 'senderismo',
+    duration: '2 HORAS',
+    price: 25,
+    imageUrl: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop',
+    capacityMax: 12,
+    difficulty: 'fácil',
+    included: [],
+    recommendations: [],
+    gallery: [
+      { type: 'video', src: 'https://www.w3schools.com/html/mov_bbb.mp4', caption: 'Paseo por el bosque' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1200&auto=format&fit=crop', caption: 'Senderos Naturales' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop', caption: 'Flora Nativa' }
     ]
   },
   {
     id: 'exp-camping',
-    title: 'Camping Consciente bajo las Estrellas',
-    tagline: 'Duerme acunado por el susurro de la montaña y un domo de luz estelar.',
-    description: 'Premium glamping de bajo impacto ambiental con camas de algodón orgánico, fogata acústica y una cúpula de cielo despejado.',
-    extendedDescription: 'Nuestra zona de camping consciente se localiza en un claro elevado, lejos de cualquier contaminación lumínica. Disfrutarás de un domo geodésico privado equipado con ropa de cama térmica y colchón ortopédico. La experiencia incluye una cena orgánica al fuego y una sesión de interpretación astronómica para descubrir el cielo andino.',
+    title: 'Zona de Camping',
+    tagline: 'Bajo las estrellas andinas.',
+    description: 'Área segura y equipada para acampar al aire libre, con espacios para fogatas y baños ecológicos.',
+    extendedDescription: 'Acampa en nuestra zona reservada...',
     category: 'camping',
-    duration: '1 noche',
-    price: 95,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBjDBGQ_6LsEsCogsLFq9li8mCJ2IFgmNuSJCE4aTaJ2XGm-u-RnvQE2s_qiG-Zs9w78n2XMIycP7ReE99D2L_Hntg2VZXhty3QYxsw_Bvjone0NuK9vzSGlc-mu-Vw_ZVmIDPfUzgryJqSndzCbnr6azFQVJsQ4r7iOLaZy_3Ggx9ZuGBfnN9HQPeNmLqm7V_WYMmfYc5C65MnwQWKsYzBDqo453HYj6KUKt4J1USTb6UuHrYyz2J1b4gEP-ePfoAgvvpDxE4WMnNE',
-    capacityMax: 4,
-    difficulty: 'fácil',
-    included: [
-      'Hospedaje en domo bioclimático equipado',
-      'Cena orgánica de tres tiempos al fuego de leña',
-      'Desayuno de la granja con miel cruda fresca',
-      'Guía astronómica con telescopio nocturno'
-    ],
-    recommendations: [
-      'Ropa de abrigo adecuada para la noche (bajas temperaturas)',
-      'Linterna de cabeza',
-      'Calzado cómodo y medias de lana gruesas',
-      'Protector solar para el amanecer'
+    duration: '1 NOCHE MIN.',
+    price: 15,
+    imageUrl: 'https://images.unsplash.com/photo-1504280390267-33106d51ce44?q=80&w=1000&auto=format&fit=crop',
+    capacityMax: 20,
+    difficulty: 'moderado',
+    included: [],
+    recommendations: [],
+    gallery: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1504280390267-33106d51ce44?q=80&w=1200&auto=format&fit=crop', caption: 'Zona de Camping' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8?q=80&w=1200&auto=format&fit=crop', caption: 'Fogatas Nocturnas' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1200&auto=format&fit=crop', caption: 'Dormir bajo las estrellas' }
     ]
   },
   {
-    id: 'exp-beekeeping',
-    title: 'Taller de Apicultura de Conservación',
-    tagline: 'Conviértete en Guardián de las Abejas por un día.',
-    description: 'Vístete con traje protector, abre las colmenas con nuestros maestros apícolas y aprende cómo se organiza el latido del bosque.',
-    extendedDescription: 'Una experiencia transformadora en nuestro santuario de apiarios. Aprenderás sobre la biología de Apis mellifera, la importancia de los polinizadores en el cambio climático, y participarás en una inspección de control y extracción ética de miel. Finaliza con una cata guiada de miel directo de las alzas melíferas.',
-    category: 'apiculture',
-    duration: '3 horas',
-    price: 50,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbuO8_IhP4IkdL-R72KJ9Lqd1-2AdwRmgZuMRKDYICVs2upe9jHCP4qylab00tBr6HoL1wgekZlx-2re0STsvpIqNH2XBmF0_AeCVDDl0R2UwD_OafMhmbD-Wr7APC-snv8h4EERweg4J-eO0rRFmBsq0-iWET8PCQKpuByEHJT703USNo6Imk2DAd6yM2Z1bM4ixr43cZEww2xskN0-W_FtuYy_okRpWZoIFuKxUokd6OQoeqvWuviLCNkcnbqJNIdjHMqv2KsdQx',
-    capacityMax: 6,
-    difficulty: 'moderado',
-    included: [
-      'Traje de apicultor profesional de triple protección',
-      'Herramientas y ahumador de pino',
-      'Cata sensorial de tres variedades de miel fresca de celda',
-      'Un frasco conmemorativo de 250g con miel recolectada en tu sesión'
-    ],
-    recommendations: [
-      'Pantalón de jean grueso y largo obligatorio',
-      'Calzado cerrado (botas altas recomendadas)',
-      'Evitar perfumes o lociones fuertes'
+    id: 'exp-mirador',
+    title: 'Mirador Panorámico',
+    tagline: 'Vistas que quitan el aliento.',
+    description: 'Contempla la inmensidad del paisaje andino desde nuestro mirador elevado con vista 360 grados.',
+    extendedDescription: 'Nuestro mirador panorámico...',
+    category: 'observatorio',
+    duration: 'LIBRE',
+    price: 5,
+    imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1000&auto=format&fit=crop',
+    capacityMax: 15,
+    difficulty: 'fácil',
+    included: [],
+    recommendations: [],
+    gallery: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop', caption: 'Vista 360 grados' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1587049352847-81a56d773c1c?q=80&w=1200&auto=format&fit=crop', caption: 'Observatorio de Cristal' },
+      { type: 'video', src: 'https://www.w3schools.com/html/mov_bbb.mp4', caption: 'Atardecer en la Finca' }
     ]
   }
 ];

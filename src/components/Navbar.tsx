@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { ShoppingBag, Calendar, Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logoClaro from '../assets/Logo2._claroRM.png';
+import logoOscuro from '../assets/Logo2RM.png';
 
 export const Navbar: React.FC = () => {
   const { cart, bookings, setCartOpen, setBookingsOpen } = useApp();
@@ -23,43 +25,35 @@ export const Navbar: React.FC = () => {
     { label: 'Avistamiento', href: '#avistamiento' },
     { label: 'Miel', href: '#miel' },
     { label: 'Bio-Hotel', href: '#hotel' },
-    { label: 'Vive la Experiencia', href: '#vive' }
+    { label: 'Vive la Experiencia', href: '#experiencias' }
   ];
 
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-45 transition-all duration-500 ${
+        className={`fixed top-0 w-full z-45 transition-all duration-500 flex items-center ${
           scrolled
-            ? 'py-4 bg-surface/90 shadow-sm border-b border-outline-variant/15 backdrop-blur-md'
-            : 'py-6 bg-transparent'
+            ? 'py-2 bg-surface/90 shadow-sm border-b border-outline-variant/15 backdrop-blur-md'
+            : 'py-4 bg-transparent'
         }`}
       >
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center">
           {/* Logo Brand */}
-          <a href="#" className="flex items-center gap-3 group focus:outline-none">
-            <svg
-              className={`h-10 w-10 transition-transform duration-500 group-hover:rotate-12 ${scrolled ? 'text-primary' : 'text-white'}`}
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M50 15C33.4315 15 20 28.4315 20 45C20 63.5 50 85 50 85C50 85 80 63.5 80 45C80 28.4315 66.5685 15 50 15Z"
-                fill="currentColor"
+          <a href="#" className="flex items-center gap-4 group focus:outline-none pl-2 md:pl-0 md:-ml-8 lg:-ml-12">
+            <div className="relative flex items-center justify-center shrink-0">
+              <img
+                src={scrolled ? logoOscuro : logoClaro}
+                alt="Logo Santuario de Chame"
+                className="h-[5rem] w-[5rem] sm:h-[6.5rem] sm:w-[6.5rem] max-w-none transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 object-contain drop-shadow-md"
               />
-              <path
-                d="M50 28C40.6112 28 33 35.6112 33 45C33 55.5 50 67.5 50 67.5C50 67.5 67 55.5 67 45C67 35.6112 59.3888 28 50 28ZM50 49C47.2386 49 45 46.7614 45 44C45 41.2386 47.2386 39 50 39C52.7614 39 55 41.2386 55 44C55 46.7614 52.7614 49 50 49Z"
-                fill="#ffe088"
-              />
-            </svg>
-            <span className={`font-display text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-secondary ${scrolled ? 'text-primary' : 'text-white'}`}>
+            </div>
+            <span className={`md:hidden font-display text-lg sm:text-xl whitespace-nowrap font-bold tracking-tight transition-colors duration-300 group-hover:text-secondary ${scrolled ? 'text-primary' : 'text-white'}`}>
               Panales de vida
             </span>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-8">
             <nav className="flex items-center gap-8">
               {menuItems.map((item) => (
                 <a

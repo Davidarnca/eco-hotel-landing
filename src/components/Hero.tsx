@@ -2,20 +2,19 @@ import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import heroBg from '../assets/finca.jpg';
+import heroBg2 from '../assets/portada_home.jpg';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image with Dark Golden Organic Overlay */}
-      <div className="absolute inset-0 z-0 scale-105 select-none pointer-events-none">
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
           alt="Bosque místico con niebla andina"
           className="w-full h-full object-cover object-center filter saturate-75 brightness-75 transition-transform duration-1000"
-          src={heroBg}
+          src={heroBg2}
         />
         {/* Soft forest linear gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/45 to-primary/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/40 to-primary/80"></div>
       </div>
 
       {/* Floating Animated Golden Glow Orbs */}
@@ -32,7 +31,7 @@ export const Hero: React.FC = () => {
           className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-secondary-fixed bg-secondary-fixed/10 px-4 py-2 rounded-full border border-secondary-fixed-dim/20 mb-6 flex items-center gap-2"
         >
           <span className="h-1.5 w-1.5 bg-secondary-fixed rounded-full animate-ping"></span>
-          REFINED ECOLOGY & APICULTURA SELECTA
+          Medio ambiente, polinizadores, BioHotel
         </motion.span>
 
         {/* Dynamic Display Title */}
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
-          className="font-display text-4xl sm:text-5xl md:text-[68px] leading-[1.1] text-white font-bold tracking-tight mb-6 max-w-3xl"
+          className="font-display text-4xl md:text-5xl lg:text-[68px] leading-[1.1] text-white font-bold tracking-tight mb-6 max-w-3xl"
         >
           Panales de vida
         </motion.h1>
@@ -50,9 +49,9 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-          className="font-sans text-base sm:text-lg md:text-xl text-white/80 font-normal leading-relaxed mb-10 max-w-2xl"
+          className="font-sans text-base md:text-lg lg:text-xl bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent font-medium leading-relaxed mb-10 max-w-2xl drop-shadow-sm"
         >
-          Apicultura de conservación, ecoturismo y hospedaje bioclimático consciente en el corazón latiente del bosque.
+          Protegemos al ser más importante del planeta
         </motion.p>
 
         {/* Dual Actions with entrance delay and organic glow */}
@@ -63,13 +62,13 @@ export const Hero: React.FC = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto"
         >
           <a
-            href="#experiences"
+            href="#experiencias"
             className="bg-secondary hover:bg-secondary-fixed text-primary px-8 py-4 rounded-lg font-sans text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-secondary/20 block text-center"
           >
             Explorar la Finca
           </a>
           <a
-            href="#honey"
+            href="#miel"
             className="border border-secondary/60 hover:border-secondary text-secondary-fixed/90 hover:text-white px-8 py-4 rounded-lg font-sans text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-white/5 block text-center"
           >
             Comprar Miel

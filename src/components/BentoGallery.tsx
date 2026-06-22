@@ -22,7 +22,7 @@ export const BentoGallery: React.FC = () => {
   const galleryItems: GalleryItem[] = [
     {
       id: 'gallery-01',
-      title: 'Hospedaje Rural',
+      title: 'Hospedaje Rurality',
       category: 'Amanecer en la Montaña',
       description: 'Una toma cinematográfica a bajo ángulo de los senderos nubosos al amanecer. El bosque nativo respira en un coro silencioso de murtos y líquenes antiguos.',
       imageUrl: hospedajeImg,
@@ -63,16 +63,16 @@ export const BentoGallery: React.FC = () => {
   };
 
   return (
-    <section id="vive" className="py-24 sm:py-32 bg-surface">
+    <section id="vive" className="py-16 md:py-24 lg:py-32 bg-[#FAF8F5]">
       {/* CORRECCIÓN: Contenedor estándar de Tailwind */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Intro */}
         <div className="text-center mb-16 space-y-4">
-          <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">
+          <span className="font-sans text-2xl sm:text-3xl font-bold tracking-[0.2em] text-secondary uppercase block">
             NUESTRO LEGADO VISUAL Y BIO-DIVERSITY
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-primary">
+          <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold text-primary">
             Vive la experiencia
           </h2>
           <div className="h-0.5 w-16 bg-secondary mx-auto"></div>
@@ -121,7 +121,7 @@ export const BentoGallery: React.FC = () => {
                 <span className="font-sans text-[10px] font-bold tracking-[0.25em] text-secondary-fixed mb-1.5 uppercase block">
                   {item.category}
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl text-white font-bold tracking-tight">
+                <h3 className="font-display text-lg md:text-xl text-white font-bold tracking-tight">
                   {item.title}
                 </h3>
               </div>
@@ -151,7 +151,7 @@ export const BentoGallery: React.FC = () => {
               {/* Close Button top-right */}
               <button
                 onClick={() => setActivePhoto(null)}
-                className="absolute top-4 right-4 z-40 p-3 rounded-full bg-primary/80 hover:bg-primary text-white border border-outline-variant/20 transition-all duration-300 pointer-events-auto"
+                className="absolute top-4 right-4 z-40 p-4 rounded-full bg-primary/80 hover:bg-primary text-white border border-outline-variant/20 transition-all duration-300 pointer-events-auto"
                 title="Cerrar Lightbox"
               >
                 <X className="h-5 w-5" />
@@ -171,7 +171,7 @@ export const BentoGallery: React.FC = () => {
                 <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-secondary uppercase block">
                   {activePhoto.category}
                 </span>
-                <h3 className="font-display text-3xl font-bold text-primary">
+                <h3 className="font-display text-xl md:text-3xl font-bold text-primary">
                   {activePhoto.title}
                 </h3>
                 <div className="h-0.5 w-12 bg-secondary"></div>

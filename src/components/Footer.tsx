@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Send, CheckCircle } from 'lucide-react';
+import logoImg from '../assets/Logo2._claroRM.png';
 
 export const Footer: React.FC = () => {
   const { subscribeToNewsletter } = useApp();
@@ -41,29 +42,16 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           
           {/* Brand Presentation */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <svg
-                className="h-8 w-8 text-secondary-fixed"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M50 15C33.4315 15 20 28.4315 20 45C20 63.5 50 85 50 85C50 85 80 63.5 80 45C80 28.4315 66.5685 15 50 15Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M50 28C40.6112 28 33 35.6112 33 45C33 55.5 50 67.5 50 67.5C50 67.5 67 55.5 67 45C67 35.6112 59.3888 28 50 28ZM50 49C47.2386 49 45 46.7614 45 44C45 41.2386 47.2386 39 50 39C52.7614 39 55 41.2386 55 44C55 46.7614 52.7614 49 50 49Z"
-                  fill="#ffe088"
-                />
-              </svg>
-              <span className="font-display text-2xl font-bold tracking-tight text-white">
-                Finca Terra
-              </span>
+          <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <img
+                src={logoImg}
+                alt="Logo Panales de Vida"
+                className="h-48 sm:h-56 w-auto object-contain drop-shadow-xl"
+              />
             </div>
-            <p className="font-sans text-xs sm:text-sm text-white/75 leading-relaxed max-w-sm">
-              Cultivando paz a través de una ecología refinada. Nuestro manifiesto se escribe a diario en el suelo que protegemos, en las colmenas que cuidamos y en el silencio de nuestra montaña sagrada.
+            <p className="font-sans text-sm sm:text-base text-white/80 leading-relaxed max-w-sm pt-2">
+              Santuario de Chame. Una iniciativa de ecoturismo y conservación dedicada a la protección de las abejas, la educación ambiental y la producción de miel 100% natural.
             </p>
           </div>
 
@@ -130,9 +118,9 @@ export const Footer: React.FC = () => {
         {/* Footnotes copyright */}
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
           <p className="font-sans text-center md:text-left leading-relaxed">
-            © 2026 Finca Terra. Todos los derechos reservados.
+            © 2026 Panales de Vida - Santuario de Chame. Todos los derechos reservados.
             <br />
-            Cultivando paz a través de una ecología refinada.
+            Protegiendo a la especie más importante del planeta.
           </p>
           <div className="flex gap-8 font-sans text-[11px] tracking-wider uppercase font-semibold text-white/55">
             <a href="#" className="hover:text-white transition-colors">Normatividad Privacidad</a>

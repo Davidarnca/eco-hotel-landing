@@ -19,7 +19,14 @@ export interface HoneyProduct {
   };
 }
 
-export type ExperienceCategory = 'hiking' | 'camping' | 'apiculture' | 'wellness';
+export type ExperienceCategory =
+  | 'hiking'
+  | 'camping'
+  | 'apiculture'
+  | 'wellness'
+  | 'alojamiento'
+  | 'senderismo'
+  | 'observatorio';
 
 export interface TourismExperience {
   id: string;
@@ -35,6 +42,7 @@ export interface TourismExperience {
   difficulty: 'fácil' | 'moderado' | 'difícil';
   included: string[];
   recommendations: string[];
+  gallery?: { type: 'image' | 'video'; src: string; caption?: string; }[];
 }
 
 export interface HotelRoom {
